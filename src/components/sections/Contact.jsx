@@ -148,7 +148,10 @@ const Contact = () => {
     e.preventDefault();
     console.log('Form submitted!');
     if (validateForm()) {
+
       console.log('Form is valid!');
+
+
       emailjs.sendForm("service_iroa31k", "template_17iiwzd", formRef.current, "vw-zlmJ-xggZQx8vN")
         .then(
           (result) => {
