@@ -153,7 +153,7 @@ const validateForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formRef.current, "YOUR_PUBLIC_KEY")
+      emailjs.sendForm("service_iroa31k", "template_17iiwzd", formRef.current, "vw-zlmJ-xggZQx8vN")
         .then(
           (result) => {
             setOpen(true);
