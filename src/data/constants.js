@@ -386,7 +386,7 @@ export const education = [
     school: "RD National College, (Affiliated to University of Mumbai)",
     date: "July 2023 - May 2026",
     grade: "8.41 CGPA",
-    desc: "I am currently pursuing a Bachelor's degree in Computer Science at RD National College, Mumbai. I have completed 3 semesters and have a CGPA of 8.71. I have taken courses in Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, and Computer Networks, among others. I am also a member of the Google Developers Student Club (GDSC) at KIIT, where I am learning and working on exciting projects with a team of talented developers.",
+    desc: "I am currently pursuing a Bachelor's degree in Computer Science at RD National College, Mumbai. I have completed 3 semesters and have a CGPA of 8.71. I have taken courses in Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, and Computer Networks, among others.",
     degree: "Bachelor of Science - BSc, Computer Science",
   },
   {
