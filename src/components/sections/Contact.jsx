@@ -128,41 +128,41 @@ const ContactButton = styled.input`
 
 const Contact = () => {
   const [open, setOpen] = useState(false);
-  const formRef = useRef();
-  const [error, setError] = useState("");
+  const [error, setError] = useState(null);
+  const formRef = useRef(null);
 
-const validateForm = () => {
-   const form = formRef.current;
-   const email = form['from_email'].value;
-   const name = form['from_name'].value;
-   const subject = form['subject'].value;
-   const message = form['message'].value;
-    if (!email || !name || !subject || !message) {
-      setError("Please fill in all fields");
+  const validateForm = () => {
+    // Add your form validation logic here
+    // For example:
+    const formData = new FormData(formRef.current);
+    const { from_email, from_name, subject, message } = Object.fromEntries(formData);
+    if (!from_email || !from_name || !subject || !message) {
+      setError('Please fill in all fields');
       return false;
     }
-
-    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
-      setError("Invalid email address");
-      return false;
-    }
-
+    setError(null);
     return true;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log('Form submitted!');
     if (validateForm()) {
+      console.log('Form is valid!');
       emailjs.sendForm("service_iroa31k", "template_17iiwzd", formRef.current, "vw-zlmJ-xggZQx8vN")
         .then(
           (result) => {
+            console.log('Email sent successfully!');
             setOpen(true);
             formRef.current.reset();
           },
           (error) => {
-            console.log(error.text);
+            console.error('Error sending email:', error.text);
+            setError(error.text);
           }
         );
+    } else {
+      console.log('Form is invalid!');
     }
   };
 
