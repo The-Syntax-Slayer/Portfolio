@@ -117,11 +117,6 @@ const ProjectCard = ({ project, setOpenModal }) => {
         <Date>{project.date}</Date>
         <Description>{project.description}</Description>
       </Details>
-      <Members>
-        {project.member?.map((member) => (
-          <Avatar src={member.img} />
-        ))}
-      </Members>
     </Card>
   );
 };
